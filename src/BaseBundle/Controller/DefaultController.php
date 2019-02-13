@@ -15,4 +15,9 @@ class DefaultController extends Controller
     {
         return $this->render('@Base/Default/contact.html.twig');
     }
+
+    public function backAction()
+    {
+        return $this->render('@Base/Default/back.html.twig');
+    }
 }
