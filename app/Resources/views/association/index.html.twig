@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Associations list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Numtel</th>
+            <th>Buts</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for association in associations %}
+            <tr>
+                <td><a href="{{ path('association_show', { 'id': association.id }) }}">{{ association.id }}</a></td>
+                <td>{{ association.nom }}</td>
+                <td>{{ association.adresse }}</td>
+                <td>{{ association.numTel }}</td>
+                <td>{{ association.buts }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('association_show', { 'id': association.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('association_edit', { 'id': association.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('association_new') }}">Create a new association</a>
+        </li>
+    </ul>
+{% endblock %}

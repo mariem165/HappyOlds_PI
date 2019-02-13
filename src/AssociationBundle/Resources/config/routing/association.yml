@@ -1,0 +1,20 @@
+association_index:
+  path:     /
+  defaults: { _controller: "AssociationBundle:association:index" }
+
+association_show:
+  path:     /{id}/show
+  defaults: { _controller: "AssociationBundle:association:show" }
+
+association_new:
+  path:     /new
+  defaults: { _controller: "AssociationBundle:association:new" }
+
+association_edit:
+  path:     /{id}/edit
+  defaults: { _controller: "AssociationBundle:association:edit" }
+
+association_delete:
+  path:     /{id}/delete
+  defaults: { _controller: "AssociationBundle:association:delete" }
+  methods:  DELETE
