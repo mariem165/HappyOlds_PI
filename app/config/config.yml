@@ -81,3 +81,13 @@ fos_user:
     from_email:
         address: mariem.bejar@esprit.tn
         sender_name: Dev-IT
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        logo:
+            uri_prefix:         /logos
+            upload_destination: '%kernel.root_dir%/../web/logos'
+            namer: vich_uploader.namer_uniqid
+            delete_on_update:   true
+            delete_on_remove:   true

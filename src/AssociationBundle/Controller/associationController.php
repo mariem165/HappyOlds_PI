@@ -41,7 +41,7 @@ class associationController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $association->setRespnsable($user);
+            $association->setResponsable($user);
             $em->persist($association);
             $em->flush();
 

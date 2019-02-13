@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Vich\UploaderBundle\Form\Type\VichImageType;
 class associationType extends AbstractType
 {
     /**
@@ -14,7 +14,13 @@ class associationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('adresse', TextareaType::class)->add('numTel')->add('buts');
+        $builder->add('nom')
+            ->add('adresse', TextareaType::class)
+            ->add('numTel')
+            ->add('buts')
+            ->add('imageFile', VichImageType::class);
+
+
     }
 
     /**

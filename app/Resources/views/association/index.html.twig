@@ -1,45 +1,105 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <h1>Associations list</h1>
+    {#<h1>Associations list</h1>#}
 
-    <table>
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nom</th>
-            <th>Adresse</th>
-            <th>Numtel</th>
-            <th>Buts</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for association in associations %}
-            <tr>
-                <td><a href="{{ path('association_show', { 'id': association.id }) }}">{{ association.id }}</a></td>
-                <td>{{ association.nom }}</td>
-                <td>{{ association.adresse }}</td>
-                <td>{{ association.numTel }}</td>
-                <td>{{ association.buts }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('association_show', { 'id': association.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('association_edit', { 'id': association.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {#<table>#}
+        {#<thead>#}
+        {#<tr>#}
+            {#<th>Id</th>#}
+            {#<th>Nom</th>#}
+            {#<th>Adresse</th>#}
+            {#<th>Numtel</th>#}
+            {#<th>Buts</th>#}
+            {#<th>Actions</th>#}
+        {#</tr>#}
+        {#</thead>#}
+        {#<tbody>#}
+            {#<tr>#}
+                {#<td><a href="{{ path('association_show', { 'id': association.id }) }}">{{ association.id }}</a></td>#}
+                {#<td>{{ association.nom }}</td>#}
+                {#<td>{{ association.adresse }}</td>#}
+                {#<td>{{ association.numTel }}</td>#}
+                {#<td>{{ association.buts }}</td>#}
+                {#<td>#}
+                    {#<ul>#}
+                        {#<li>#}
+                            {#<a href="{{ path('association_show', { 'id': association.id }) }}">show</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="{{ path('association_edit', { 'id': association.id }) }}">edit</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</td>#}
+            {#</tr>#}
+        {#{% endfor %}#}
+        {#</tbody>#}
+    {#</table>#}
 
-    <ul>
-        <li>
-            <a href="{{ path('association_new') }}">Create a new association</a>
-        </li>
-    </ul>
-{% endblock %}
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('association_new') }}">Create a new association</a>#}
+        {#</li>#}
+    {#</ul>#}
+
+
+<!--Page Title-->
+<section class="page-title">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-6 col-sm-6 col-xs-12 pull-left">
+                <h1>Nos Association</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 pull-right text-right path"><a href="index.html">Home</a>&ensp;/&ensp;<a
+                        href="#">Our Experts</a></div>
+            <div class="overlay"></div>
+        </div>
+    </div>
+</section>
+<!--Page Title Ends-->
+<section class="feature-style-three">
+    <div class="container">
+
+        <section class="our-team style-two">
+            <div class="container">
+                <div class="row">
+                    {% for a in associations %}
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="single-team-member">
+                                <figure class="img-box">
+                                    <a href="{{ path('association_show',{id:a.id}) }}"><img
+                                                src="{{ asset('') }}{{ vich_uploader_asset(a, 'imageFile') }}"
+                                                alt=""></a>
+                                    <div class="overlay">
+                                        <div class="inner-box">
+                                            <ul class="social">
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </figure>
+                                <div class="author-info">
+                                    <a href="expart-details.html"><h4>{{ a.nom }}</h4></a>
+                                    <p>{{ a.buts }}</p>
+                                    <ul>
+                                        <li><i class="fa fa-phone"></i>Phone: {{ a.numTel }}</li>
+                                        <li><i class="fa fa-file-text"></i>Adress {{ a.adresse }}</li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </section>
+
+
+        {% endblock %}
