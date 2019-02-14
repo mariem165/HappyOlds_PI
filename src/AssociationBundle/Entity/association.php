@@ -52,7 +52,7 @@ class association
     private $buts;
 
     /**
-     * @ORM\ManyToOne(targetEntity="BaseBundle\Entity\User")
+     * @ORM\OneToOne(targetEntity="BaseBundle\Entity\User")
      * @ORM\JoinColumn(name="idResponsable",referencedColumnName="id")
      *
      */

@@ -1,11 +1,19 @@
+actualite:
+  resource: "@ActualiteBundle/Resources/config/routing.yml"
+  prefix:   /
+
+event:
+  resource: "@EventBundle/Resources/config/routing.yml"
+  prefix:   /
+
 association:
-    resource: "@AssociationBundle/Resources/config/routing.yml"
-    prefix:   /
+  resource: "@AssociationBundle/Resources/config/routing.yml"
+  prefix:   /
 base:
-    resource: "@BaseBundle/Resources/config/routing.yml"
-    prefix:   /
+  resource: "@BaseBundle/Resources/config/routing.yml"
+  prefix:   /
 app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+  resource: '@AppBundle/Controller/'
+  type: annotation
 fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+  resource: "@FOSUserBundle/Resources/config/routing/all.xml"
