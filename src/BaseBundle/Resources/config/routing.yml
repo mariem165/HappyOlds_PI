@@ -5,3 +5,7 @@ base_homepage:
 base_contact:
     path:     /contact
     defaults: { _controller: BaseBundle:Default:contact }
+
+admin_homepage:
+    path:     /back
+    defaults: { _controller: BaseBundle:Default:back }
