@@ -19,5 +19,6 @@ class DefaultController extends Controller
     public function backAction()
     {
         return $this->render('@Base/Default/back.html.twig');
+
     }
 }
